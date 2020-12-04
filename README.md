@@ -1,15 +1,15 @@
 # kafka-client
-Kafka Client
-
-# kafka-client
-Simple Linux Container with Java and Kafka.
+Simple Alpine OpenJDK Container with Java and Kafka.
+Can act as kafka client. It should have /etc/hosts file enabled in order to reach Zookeeper addresses.
 
 ## Start as a background Docker Container
 
 Since it has Entrypoint `/bin/sh` you should add background and interactive flags in order to start it correctly:
 
-`docker run -d -it pijer10/kafka-client:latest`
+`docker run -d -it --name kafka-client-container pijer10/kafka-client:latest`
 
+To enter into this container, use:
+`docker exec -it kafka-client /bin/bash`
 
 ## Start as a foreground Docker Container
 
